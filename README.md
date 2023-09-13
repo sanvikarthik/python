@@ -12,17 +12,17 @@ with open(‘test.txt’,’w’) as fp:
 with open(‘test.txt’,’w’) as fp:
          fp.read()
 
-Types of File
+#Types of File
 •	Text File: Text file usually we use to store character data. For example, test.txt
 •	Binary File: The binary files are used to store binary data such as images, video files, audio files, etc.
 
-File Path
+#File Path
 A file path defines the location of a file or folder in the computer system. There are two ways to specify a file path.
 1.	Absolute path: which always begins with the root folder
 2.	Relative path: which is relative to the program's current working directory
 The absolute path includes the complete directory list required to locate the file.
 
-Read File
+#Read File
 To read or write a file, Python provides a built-in function open().
 Syntax  open(file_path, access_mode) function. It returns the file object. This object is used to read or write the file according to the access mode.
 Accesss mode represents R is for reading and W is for writing
@@ -42,7 +42,8 @@ hn@gmail.com
 hm46@yahoo.in
 kffgh
 
-Writing to a File
+#Writing to a File
+
 To write content into a file, Use the access mode w to open a file in a write mode.
 Note:
 •	If a file already exists, it truncates the existing content and places the filehandle at the beginning of the file. A new file is created if the mentioned file doesn’t exist.
@@ -148,7 +149,7 @@ f=open("C://Users//deepa//OneDrive//Desktop//ex.txt",'r')
 print(f.readlines())
 
 
-Python File Methods
+#Python File Methods
 Method	      Description  
 read()			Returns the file content.
 readline()		Read single line
@@ -163,10 +164,9 @@ fileno()			Returns a number that represents the stream, from the operating syste
 flush()			Flushes the internal buffer.
 
 
-Python List Files in a Directory
-Home » Python » File Handling » Python List Files in a Directory
-Python List Files in a Directory
-Updated on: July 27, 2023 | 1 Comment
+
+#Python List Files in a Directory
+
 To list all files in a directory using Python, you can use the built-in os module.
 Also, there are multiple ways to list files in a directory. In this article, We will use the following four methods.
 •	os.listdir('dir_path'): Return the list of files and directories in a specified directory path.
@@ -198,15 +198,15 @@ open('facebook.ico', 'wb').write(r.content)
 save the file as facebook.ico.
 
 
-BeautifulSoup
+#BeautifulSoup
 BeautifulSoup is a Python library that is used to pull data of HTML and XML files. It is mainly designed for web scrapping. It works with the parser to provide a natural way of navigating, searching, and modifying the parse tree
 
-Working with Excel Spreadsheets in Python
+#Working with Excel Spreadsheets in Python
 First, let’s go over some basic definitions: an Excel spreadsheet document is called a workbook. A single workbook is saved in a file with the .xlsx extension. Each workbook can contain multiple sheets (also called worksheets). The sheet the user is currently viewing (or last viewed before closing Excel) is called the active sheet. Each sheet has columns (addressed by letters starting at A) and rows (addressed by numbers starting at 1). A box at a particular column and row is called a cell. Each cell can contain a number or text value. The grid of cells with data makes up a sheet.
 Openpyxl is a Python library that provides various methods to interact with Excel Files using Python. It allows operations like reading, writing, arithmetic operations, plotting graphs, etc.
 Getting Sheets from the Workbook Each sheet is represented by a Worksheet object, which you can obtain by using the square brackets with the sheet name string like a dictionary key. Finally, you can use the active attribute of a Workbook object to get the workbook’s active sheet. The active sheet is the sheet that’s on top when the workbook is opened in Excel. Once you have the Worksheet object, you can get its name from the title attribute.
 Example.xlsx
-Reading from Spreadsheets
+#Reading from Spreadsheets
 To read an Excel file you have to open the spreadsheet using the load_workbook() method. 
 active to select the first sheet available 
 the cell attribute to select the cell by passing the row and column parameter. The value attribute prints the value of the particular cell. 
@@ -220,7 +220,7 @@ print(cell_obj.value)
 output
              Name
 
-Reading from Multiple Cells
+#Reading from Multiple Cells
 There can be two ways of reading from multiple cells. 
 Method 1: We can get the count of the total rows and columns using the max_row and max_column respectively. We can use these values inside the for loop to get the value of the desired row or column or any cell depending upon the situation. Let’s see how to get the value of the first column and first row.
 
@@ -276,7 +276,7 @@ USN    Name      Age
 3       Akshay   12
 
 
-Writing to Spreadsheets
+#Writing to Spreadsheets
 First, let’s create a new spreadsheet, and then we will write some data to the newly created file. An empty spreadsheet can be created using the Workbook() method
 from openpyxl import Workbook
 wb=Workbook()
@@ -289,7 +289,7 @@ sheet['A5']=500
 sheet['A6']='=sum(A1:A5)'
 wb.save("ex.xlsx")
 
-Insert data or to write to an Excel sheet
+#Insert data or to write to an Excel sheet
 Call the openpyxl.Workbook() function to create a new, blank Workbook object. The workbook will start off with a single sheet named Sheet. You can change the name of the sheet by storing a new string in its title attribute. Any time you modify the Workbook object or its sheets and cells, the spreadsheet file will not be saved until you call the save() workbook method.
 import openpyxl
 my_wb = openpyxl.Workbook()
@@ -308,21 +308,21 @@ my_wb.save("C:\\Users\\deepa\\OneDrive\\Desktop\\e.xlsx")
 
 output
  
-To add Sheets in the Workbook 
+#To add Sheets in the Workbook 
 import openpyxl
 my_wb = openpyxl.Workbook()
 my_sheet = my_wb.active
 my_wb.create_sheet(index = 1 , title = "new sheet")
 my_wb.save("C:\Users\TP\Desktop\Book1.xlsx")
 
-Display Total number of rows.
+#Display Total number of rows.
 import openpyxl
 my_path = "C:\Users\TP\Desktop\Book1.xlsx"
 my_wb_obj = openpyxl.load_workbook(my_path)
 my_sheet_obj = my_wb_obj.active
 print(my_sheet_obj.max_row)
 
-Display total number of columns
+#Display total number of columns
 import openpyxl
 # Give the location of the file
 My_path = "C:\Users\TP\Desktop\Book1.xlsx"
@@ -330,7 +330,7 @@ My_wb_obj = openpyxl.load_workbook(path)
 my_sheet_obj = my_wb_obj.active
 print(sheet_obj.max_column)
 
-Display all columns name
+#Display all columns name
 import openpyxl
 # Give the location of the file
 my_path = "C:\Users\TP\Desktop\Book1.xlsx"
@@ -341,7 +341,7 @@ my_max_col = my_sheet_obj.max_column
 for i in range(1, my_max_col + 1):
    my_cell_obj = my_sheet_obj.cell(row = 1, column = i)
    print(my_cell_obj.value)
-Workbooks, Sheets, Cells
+#Workbooks, Sheets, Cells
 As a quick review, here’s a rundown of all the functions, methods, and data types involved in reading a cell out of a spreadsheet file:
 1.	Import the openpyxl module.
 2.	Call the openpyxl.load_workbook() function.
